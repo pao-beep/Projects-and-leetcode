@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Chat System</title>
+</head>
+<body onload="main()">
+<div class="split-1">
+        <div class="conversations">
+            <div class="header">Conversations</div>
+            <div id="conversation-list">
+                <!-- Will hold available conversations -->
+            </div>
+        </div>
+    </div>
+    <div class="split-3">
+        <div class="user">
+            <div class="header">User Info</div>
+            <div class="d-inline-block">
+                <label>User ID</label><br>
+                <input id="user-id" class="font-control" type="text" disabled>
+            </div>
+            <div class="d-inline-block">
+                <label>Name</label><br/>
+                <input id="edit-user-name" class="font-control" type="text" placeholder="enter your name"/>
+            </div>
+        </div>
+        <div class="chat">
+            <div id="messages">
+                <!-- Will hold filtered messages -->
+            </div>
+        </div>
+    </div>
+    <div class="draft-wrapper">
+        <div class="draft">
+            <div class="split-1">
+                <label>To</label><br/>
+                <select id="compose-to" class="font-control" multiple></select><br/>
+            </div>
+            <div class="split-3">
+                <label>Message</label><br/>
+                <textarea id="compose-message" class="font-control" placeholder="enter a message"></textarea>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

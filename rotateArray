@@ -1,0 +1,61 @@
+'''Given an integer array nums, rotate the array to the right by k steps, where k is non-negative.
+
+
+
+Example 1:
+
+Input: nums = [1,2,3,4,5,6,7], k = 3
+Output: [5,6,7,1,2,3,4]
+Explanation:
+rotate 1 steps to the right: [7,1,2,3,4,5,6]
+rotate 2 steps to the right: [6,7,1,2,3,4,5]
+rotate 3 steps to the right: [5,6,7,1,2,3,4] don't return anything modify nums in place'''
+
+class Solution:
+    def rotate(self, nums: List[int], k: int) -> None:
+        """
+        Do not return anything, modify nums in-place instead.
+        """
+        n = len(nums)
+        k = k % n  # Handle cases where k > n
+
+        # Reverse the entire array
+        nums.reverse()
+
+        # Reverse the first k elements
+        nums[:k] = reversed(nums[:k])
+
+        # Reverse the remaining elements
+        nums[k:] = reversed(nums[k:])
+
+"""
+Explanation of the Fixed Code:
+Handle Large k:
+
+If k is greater than the length of the array (n), we reduce it using k % n. This ensures that we only perform the necessary rotations.
+
+Reverse the Entire Array:
+
+Reversing the entire array brings the last k elements to the front, but in reverse order.
+
+Reverse the First k Elements:
+
+Reversing the first k elements corrects their order.
+
+Reverse the Remaining Elements:
+
+Reversing the remaining n - k elements corrects their order.
+
+Example Walkthrough:
+For nums = [1, 2, 3, 4, 5, 6, 7] and k = 3:
+
+Reverse the entire array: [7, 6, 5, 4, 3, 2, 1].
+
+Reverse the first k elements: [5, 6, 7, 4, 3, 2, 1].
+
+Reverse the remaining elements: [5, 6, 7, 1, 2, 3, 4].
+
+The final array is [5, 6, 7, 1, 2, 3, 4], which is the correct result.
+
+
+"""
